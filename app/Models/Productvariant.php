@@ -11,5 +11,9 @@ class Productvariant extends Model
     protected $fillable = [];
     protected $guarded =  [];
 
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
+
    
 }

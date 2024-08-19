@@ -14,5 +14,5 @@ class Product extends Model
     public function productvariant(){
         return $this->hasOne(Productvariant::class);
     }
-  
+    
 }

@@ -15,17 +15,17 @@
         <td>Price</td>
         <td>Action</td>
       </tr>
-      @foreach ($data as $id => $customers)
+      @foreach ($data as $id => $order)
       <tr>
         
         <td>{{$id+1}}</td>
-        <td>{{$customers->name}}</td>
-       <td> {{ optional($customers->productvariant)->gender }}</td>
-       <td> {{ optional($customers->productvariant)->size }}</td>
-       <td>{{$customers->price}}</td>
+        <td>{{$order->name}}</td>
+       <td> {{ optional($order->productvariant)->gender }}</td>
+       <td> {{ optional($order->productvariant)->size }}</td>
+       <td>{{$order->price}}</td>
         
-        <td><a href="{{route('view.customer',$customers->id) }}" class="btn btn-primary btn-sm">View</a>
-          <a href= "{{route('order.customer',$customers->id)}}" class="btn btn-primary btn-sm">Order</a></td> 
+        <td><a href="{{route('view.order',$order->id) }}" class="btn btn-primary btn-sm">View</a>
+          <a href= "{{route('add.order',$order->id)}}" class="btn btn-primary btn-sm">Order</a></td> 
         </tr>
       </tr>
       @endforeach

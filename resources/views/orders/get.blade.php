@@ -20,7 +20,7 @@
         <div class="mb-3">
             <label for="form-label">Price: {{ $data->price }}</label>
         </div>
-        <a href='{{route('customer')}}' class="btn btn-primary btn-sm mb-3">Back</a>
+        <a href='{{route('order')}}' class="btn btn-primary btn-sm mb-3">Back</a>
        
     </div>
 </div>

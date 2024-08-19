@@ -18,7 +18,7 @@ class ValidUser
     public function handle(Request $request, Closure $next)
     {
        if(Auth::check() && Auth::user()->role == 'customer'){
-             return redirect()->route('customer');
+             return redirect()->route('order');
         
        } elseif(Auth::check() && Auth::user()->role == 'admin'){ 
                return $next($request);

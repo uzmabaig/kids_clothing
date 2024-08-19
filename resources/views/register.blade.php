@@ -25,15 +25,24 @@
         @enderror
       </span>
     </div>
-    <div class="mb-3">
+
+      <div class="mb-3">
       <label for="form-label">Role:</label>
-      <input type="text" value="{{ old('role')}}" class="form-control  @error('role') is-invalid  @enderror" id="role" name="role">
       <span class="text-danger">
         @error('role')
         {{ $message }}
         @enderror
       </span>
     </div>
+    <div class="form-check form-check-inline mb-3">
+      <input class="form-check-input" type="radio" name="role" id="Radio1" value="{{ 'admin' }}">
+      <label class="form-check-label" for="Radio1">Admin</label>
+    </div>
+    <div class="form-check form-check-inline mb-3">
+      <input class="form-check-input" type="radio" name="role" id="Radio2" value="{{ 'customer' }}">
+      <label class="form-check-label" for="Radio2">Customer</label>
+      </div>
+ 
     <div class="mb-3">
       <label for="form-label">Password:</label>
       <input type="password" value="" class="form-control  @error('password') is-invalid  @enderror" id="password" name="password">

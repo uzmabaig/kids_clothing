@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductVariantController;
 use App\Http\Controllers\UserController;
@@ -33,11 +33,11 @@ Route::middleware(ValidUser::class)->group(function () {
   });
 });
 
-Route::controller(CustomerController::class)->group(function () {
+Route::controller(OrderController::class)->group(function () {
 
-  Route::get('/customers', 'customer')->name('customer');
-  Route::get('/customers/{id}', 'single')->name('view.customer');
-  Route::match(['GET', 'POST'], 'order/{id}', 'order')->name('order.customer');
+  Route::get('/orders', 'order')->name('order');
+  Route::get('/orders/{id}', 'single')->name('view.order');
+  Route::match(['GET', 'POST'], 'order/{id}', 'add')->name('add.order');
 });
 
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
