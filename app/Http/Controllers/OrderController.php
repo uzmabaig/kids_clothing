@@ -21,31 +21,27 @@ class OrderController extends Controller
   }
 
 
-  public function add(Request $request, $id)
+  public function add($id)
   {
+    $order = Product::with('productvariant')->find($id);
 
-    if ($request->method() === 'GET') {
-
-
-
-      $order = Order::create([
-        'product_id' => optional($request->productvariant)->product_id,
-        'name' => $request->name,
-        'gender' => optional($request->productvariant)->gender,
-        'size' => optional($request->productvariant)->size,
-        'price' => $request->price,
+    $order = Order::create([
+        'product_id' =>$order->productvariant->product_id,
+        'name' => $order->name,
+        'gender' => $order->productvariant->gender,
+        'size' => $order->productvariant->size,
+        'price' =>  $order->price,
       ]);
 
 
       if ($order) {
-        return redirect()->route('orders.order')->with('success', 'you order has been placed!');
+        return redirect()->route('order')->with('success', 'you order has been placed!');
       } else {
         return back()->with('error', 'sorry!please shop your order again');
       }
-    }
-    echo "check post request";
+
 
     $order = Order::get();
-    return view('orders.order', ['data' => $order]);
+    return view('orders.order');
   }
 };
