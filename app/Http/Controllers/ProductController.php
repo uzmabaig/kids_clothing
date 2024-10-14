@@ -10,6 +10,7 @@ class ProductController extends Controller
   public function show()
   {
     $products = Product::get();
+    // $products = Product::paginate(3);
     return view('product.products', ['data' => $products]);
   }
 
@@ -27,11 +28,13 @@ class ProductController extends Controller
         'price' => 'required|numeric',
         'gender' => 'required',
         'size' => 'required',
+      
 
       ]);
       $products = Product::create([
         'name' => $request->name,
         'price' => $request->price,
+    
       ]);
       $products->productvariant()->create([
         'gender' => $request->gender,

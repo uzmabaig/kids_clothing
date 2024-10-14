@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-6 offset-3 mt-4">
     <h3>All Productvariants:</h3>
-    <a href='{{route('welcome')}}' class="btn btn-secondary btn-sm mb-3">Back</a>
+    <a href= "{{ route('welcome') }}" class="btn btn-secondary btn-sm mb-3">Back</a>
     <table class="table table-bordered table-striped">
       <tr>
         <td>Id</td>

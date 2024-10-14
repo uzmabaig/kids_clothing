@@ -42,6 +42,10 @@
           @enderror
         </span>
       </div>
+      {{-- <div class="mb-3">
+        <label for="form-label">Image:</label>
+        <input type="text" value="image" class="form-control">
+      </div> --}}
      <div class="mb-3">
         <button class="btn btn-primary" type="submit" name="submit">Add</button>
         <a href='{{route('products')}}' class="btn btn-secondary ">Back</a>

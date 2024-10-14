@@ -20,6 +20,9 @@
         <div class="mb-3">
             <label for="form-label">Size: {{ $data->productvariant->size }}</label>
         </div>
+        <div class="mb-3">
+            <label for="form-label">Image: {{ $data->image }}</label>
+        </div>
         <a href='{{route('products')}}' class="btn btn-secondary ">Back</a>
     </div>
 </div>

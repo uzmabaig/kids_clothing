@@ -37,7 +37,7 @@ Route::controller(OrderController::class)->group(function () {
 
   Route::get('/orders', 'order')->name('order');
   Route::get('/orders/{id}', 'single')->name('view.order');
-  Route::match(['GET', 'POST'], 'order/{id}', 'add')->name('add.order');
+  Route::get('order/{id}', 'add')->name('add.order');
 });
 
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
