@@ -16,6 +16,7 @@
                 <div class="card-header">
          @yield('content', 'Default content')
     </div>
+   
 </form>
 </div>
 </div>
